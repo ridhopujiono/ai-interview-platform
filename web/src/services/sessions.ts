@@ -7,6 +7,14 @@ export const sessionsApi = {
       `/sessions/${id}`
     ),
 
+  update: (id: number, candidateName: string) =>
+    api.patch<{ session: Session }>(`/sessions/${id}`, {
+      session: { candidate_name: candidateName },
+    }),
+
+  delete: (id: number) =>
+    api.delete<{ message: string }>(`/sessions/${id}`),
+
   endSession: (id: number, reason = "manual_assessor") =>
     api.post<{ session: Session }>(`/sessions/${id}/end_session`, {
       session: { reason },
