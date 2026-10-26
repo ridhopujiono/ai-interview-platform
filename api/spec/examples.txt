@@ -1,0 +1,12 @@
+example_id                                                | status | run_time        |
+--------------------------------------------------------- | ------ | --------------- |
+./spec/models/assessment_spec.rb[1:1:1]                   | passed | 0.02533 seconds |
+./spec/requests/api/v1/sessions_consent_spec.rb[1:1:1]    | passed | 0.01141 seconds |
+./spec/requests/api/v1/sessions_consent_spec.rb[1:2:1]    | passed | 0.00911 seconds |
+./spec/requests/api/v1/sessions_consent_spec.rb[1:2:2]    | passed | 0.00329 seconds |
+./spec/requests/api/v1/sessions_management_spec.rb[1:1:1] | passed | 0.03161 seconds |
+./spec/requests/api/v1/sessions_management_spec.rb[1:1:2] | passed | 0.01993 seconds |
+./spec/requests/api/v1/sessions_management_spec.rb[1:2:1] | passed | 0.01884 seconds |
+./spec/requests/api/v1/sessions_management_spec.rb[1:2:2] | passed | 0.01722 seconds |
+./spec/services/fit_gap/engine_spec.rb[1:1:1]             | passed | 0.02466 seconds |
+./spec/services/fit_gap/engine_spec.rb[1:1:2]             | passed | 0.14222 seconds |
