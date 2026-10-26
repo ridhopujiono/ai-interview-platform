@@ -6,7 +6,7 @@ module Api
       authorize_auth_token! :assessor, except: %i[candidate_info audio_complete record_consent]
       skip_before_action :require_tenant!, only: %i[candidate_info audio_complete record_consent]
 
-      before_action :set_session, only: %i[show end_session coverage transcript]
+      before_action :set_session, only: %i[show update destroy end_session coverage transcript]
 
       # GET /api/v1/assessments/:assessment_id/sessions
       def index
@@ -54,6 +54,26 @@ module Api
             }
           )
         )
+      end
+
+      # PATCH/PUT /api/v1/sessions/:id
+      def update
+        name = params.dig(:session, :candidate_name)
+        if @session.update(candidate_name: name.presence)
+          json_response(session: session_json(@session))
+        else
+          json_error(@session.errors.full_messages.first, :unprocessable_entity)
+        end
+      end
+
+      # DELETE /api/v1/sessions/:id
+      def destroy
+        if @session.active?
+          return json_error("Cannot revoke an active in-progress session", :unprocessable_entity)
+        end
+
+        @session.destroy
+        json_response(message: "Session successfully deleted")
       end
 
       # POST /api/v1/sessions/:id/end
