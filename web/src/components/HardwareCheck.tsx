@@ -279,8 +279,8 @@ const HardwareCheck: React.FC<HardwareCheckProps> = ({ onStart }) => {
             {/* Internet Tolerance Alert for Candidates */}
             {isInternetOnlyFailure && (
                 <div className="mx-4 my-3 p-3 bg-amber-50 border border-amber-200 rounded-lg text-xs text-amber-800 space-y-2">
-                    <p className="font-medium text-amber-900">⚠️ Kecepatan internet di bawah rekomendasi ideal</p>
-                    <p className="text-amber-700">Mikrofon dan audio Anda berfungsi normal. Anda tetap dapat memulai wawancara, namun mungkin ada jeda respons AI.</p>
+                    <p className="font-medium text-amber-900">⚠️ Internet connection speed is below recommended threshold</p>
+                    <p className="text-amber-700">Your microphone and audio output are working normally. You may still proceed with the interview, though you might experience minor response latency from the AI.</p>
                     <label className="flex items-center gap-2 cursor-pointer font-medium text-amber-900 select-none">
                         <input
                             type="checkbox"
@@ -288,7 +288,7 @@ const HardwareCheck: React.FC<HardwareCheckProps> = ({ onStart }) => {
                             onChange={(e) => setForceProceedInternet(e.target.checked)}
                             className="rounded border-amber-400 text-amber-600 focus:ring-amber-500"
                         />
-                        <span>Saya memahami risikonya dan ingin melanjutkan wawancara</span>
+                        <span>I understand the potential latency and wish to proceed with the interview</span>
                     </label>
                 </div>
             )}
