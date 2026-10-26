@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, Mic, Brain, Lock, ExternalLink } from "lucide-react";
+import { ShieldCheck, Mic, Brain, Lock } from "lucide-react";
 
 interface ConsentNoticeProps {
   roleTitle: string;
@@ -23,14 +23,14 @@ export default function ConsentNotice({
       <div className="bg-primary/5 border-b p-5">
         <div className="flex items-center gap-2 text-primary font-medium text-sm mb-1">
           <ShieldCheck className="h-5 w-5 text-primary" />
-          <span>Kepatuhan UU Pelindungan Data Pribadi (UU PDP No. 27/2022)</span>
+          <span>Regulatory Compliance · Indonesia UU PDP (Law No. 27/2022)</span>
         </div>
         <h2 className="text-lg font-bold text-foreground">
-          Pemberitahuan & Persetujuan Privasi Kandidat
+          Candidate Privacy Notice & Consent
         </h2>
         <p className="text-sm text-muted-foreground mt-1">
-          {candidateName ? `Halo ${candidateName}, s` : "S"}ebelum memulai sesi wawancara AI untuk posisi{" "}
-          <strong className="text-foreground">{roleTitle}</strong>, mohon tinjau hak dan ketentuan pemrosesan data pribadi Anda.
+          {candidateName ? `Hello ${candidateName}, b` : "B"}efore beginning your AI-assisted interview for the position of{" "}
+          <strong className="text-foreground">{roleTitle}</strong>, please review your personal data protection rights and processing terms.
         </p>
       </div>
 
@@ -40,9 +40,9 @@ export default function ConsentNotice({
           <div className="flex gap-3 items-start p-3 rounded-lg bg-muted/40 border">
             <Mic className="h-5 w-5 text-blue-600 mt-0.5 shrink-0" />
             <div>
-              <p className="font-semibold text-foreground">Data Biometrik Suara</p>
+              <p className="font-semibold text-foreground">Voice Biometric Audio Recording</p>
               <p className="text-muted-foreground text-xs leading-relaxed">
-                Audio suara Anda akan direkam dan distreaming secara real-time selama sesi berlangsung untuk keperluan interaksi percakapan dua arah.
+                Your spoken voice audio will be captured and streamed in real-time during this session to facilitate two-way conversational interaction.
               </p>
             </div>
           </div>
@@ -50,9 +50,9 @@ export default function ConsentNotice({
           <div className="flex gap-3 items-start p-3 rounded-lg bg-muted/40 border">
             <Brain className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
             <div>
-              <p className="font-semibold text-foreground">Pemrosesan AI & Transkrip Percakapan</p>
+              <p className="font-semibold text-foreground">AI Transcription & Competency Assessment</p>
               <p className="text-muted-foreground text-xs leading-relaxed">
-                Percakapan Anda akan ditranskrip dan dianalisis oleh model AI (Google Gemini) untuk mengukur kompetensi teknis sesuai taksonomi keterampilan.
+                Your conversation will be transcribed and analyzed by an AI model (Google Gemini) to assess role-relevant technical competencies according to standardized skill rubrics.
               </p>
             </div>
           </div>
@@ -60,9 +60,9 @@ export default function ConsentNotice({
           <div className="flex gap-3 items-start p-3 rounded-lg bg-muted/40 border">
             <Lock className="h-5 w-5 text-emerald-600 mt-0.5 shrink-0" />
             <div>
-              <p className="font-semibold text-foreground">Hak Subjek Data & Evaluasi Manusia</p>
+              <p className="font-semibold text-foreground">Data Subject Rights & Human Oversight</p>
               <p className="text-muted-foreground text-xs leading-relaxed">
-                Hasil evaluasi AI dapat ditinjau dan dikoreksi ulang oleh asesor manusia (Human-in-the-Loop). Anda berhak mengajukan permohonan akses atau penghapusan data wawancara melalui tim rekrutmen.
+                AI evaluations are subject to human assessor review and override (Human-in-the-Loop). In accordance with Indonesia's Personal Data Protection Law (UU PDP No. 27/2022), you retain the right to request access, correction, or deletion of your interview records through the hiring organization.
               </p>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function ConsentNotice({
               className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
             />
             <span className="text-xs text-foreground leading-relaxed select-none">
-              Saya telah membaca, memahami, dan <strong>memberikan persetujuan eksplisit</strong> bagi platform untuk merekam suara, memproses transkrip dengan AI, dan menyimpan data wawancara untuk keperluan seleksi kerja ini sesuai ketentuan <strong>UU PDP No. 27/2022</strong>.
+              I have read, understood, and <strong>provide explicit consent</strong> for the recording of my voice audio, AI-driven transcription and competency evaluation, and secure data storage for recruitment purposes pursuant to <strong>Indonesia UU PDP Law No. 27/2022</strong>.
             </span>
           </label>
         </div>
@@ -87,7 +87,7 @@ export default function ConsentNotice({
       {/* Footer CTA */}
       <div className="px-5 py-4 border-t bg-muted/20 flex flex-col sm:flex-row items-center justify-between gap-3">
         <span className="text-xs text-muted-foreground">
-          Persetujuan ini dapat ditarik sewaktu-waktu sebelum wawancara dimulai.
+          This consent may be withdrawn at any time prior to starting the interview.
         </span>
         <Button
           onClick={onConsentGiven}
@@ -95,7 +95,7 @@ export default function ConsentNotice({
           size="default"
           className="w-full sm:w-auto"
         >
-          {isLoading ? "Menyimpan Persetujuan..." : "Setujui & Lanjutkan"}
+          {isLoading ? "Recording Consent..." : "Accept & Proceed to Equipment Check"}
         </Button>
       </div>
     </div>
